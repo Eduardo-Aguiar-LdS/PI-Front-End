@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+}
+
+picture {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+nav li {
+    margin-left: 10 px;
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-carro {
+    background-color: transparent;
+}
+
+.btn-carro:hover{
+    background-color: lightgray;
+}
+
+.btn-login{
+    background-color: #66BB6A; 
+    font-size: 20pt
+}
+
+.btn-login:hover{
+    background-color: transparent;
+}
