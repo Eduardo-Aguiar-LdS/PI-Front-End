@@ -1,0 +1,91 @@
+<style>
+    /* Estilo básico do corpo */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Contêiner para o texto e botão */
+    .container {
+      position: fixed; /* Fixo na tela */
+      top: 80px; /* Ajuste para ficar abaixo do plugin de Libras */
+      right: 20px; /* Encostado na lateral direita */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Botão de alternância */
+    .toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 30px;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .switch-label {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #b3b3b3;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .switch-label::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    input[type="checkbox"]:checked + .switch-label {
+      background-color: #4caf50;
+    }
+
+    input[type="checkbox"]:checked + .switch-label::before {
+      transform: translateX(30px);
+    }
+
+    /* Estilo do texto */
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: normal;
+    }
+  </style>
+
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=MmfPhaM2"></script>
+  <div class="container">
+    <h2>Leitura de Texto</h2>
+    <div class="toggle-switch">
+      <input type="checkbox" id="voiceSwitch" />
+      <label for="voiceSwitch" class="switch-label"></label>
+    </div>
+  </div>
+
+  <script>
+    const switchButton = document.getElementById('voiceSwitch');
+
+    switchButton.addEventListener('change', () => {
+      if (switchButton.checked) {
+        responsiveVoice.speak("A leitura de texto foi ativada.", "Portuguese Female");
+      } else {
+        responsiveVoice.cancel();
+      }
+    });
+  </script>
